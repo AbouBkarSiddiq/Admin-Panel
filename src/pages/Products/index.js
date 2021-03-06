@@ -8,7 +8,7 @@ export default function Product(props) {
   const { name } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!products.hasOwnProperty(`${name.replaceAll("%20", " ")}`)) {
+    if (!products.hasOwnProperty(`${name}`)) {
       props.history.goBack();
     }
   }, []);
@@ -24,8 +24,8 @@ export default function Product(props) {
             {name}
           </h1>
           <div className="md:px-8 flex justify-center md:justify-start sm:flex sm:justify-start  flex-wrap">
-            {products.hasOwnProperty(`${name.replaceAll("%20", " ")}`) &&
-              products[name.replaceAll("%20", " ")].map((product) => (
+            {products.hasOwnProperty(`${name}`) &&
+              products[name].map((product) => (
                 <ProductsCard product={product} categoryName={name} />
               ))}
           </div>

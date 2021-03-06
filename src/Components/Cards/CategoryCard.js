@@ -7,7 +7,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const ITEM_HEIGHT = 48;
 
-export default function CategoryCard({ name, image }) {
+export default function CategoryCard({ name ,image }) {
     
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -66,21 +66,3 @@ export default function CategoryCard({ name, image }) {
         </div>
     )
 }
-
-
-
-
-
-
-
-{/*     <div className="dropdown inline-flex relative">
-                        <div className="cursor-pointer  text-white font-semibold py-2 px-4 md:mt-0 sm:mt-4 rounded" >
-                            <a className="text-lg">
-                                <FaEllipsisV />
-                            </a>
-                        </div>
-                        <ul className="text-base dropdown-menu hidden text-white bg-blue-500 pt-2" >
-                            <Link className=" border py-2 px-4 block ">Delete</Link>
-                            <Link className=" border py-2 px-4 block" >Edit</Link>
-                        </ul>
-                    </div>*/}

@@ -7,10 +7,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
-const options = [
-    <Link to='/ProductsEditForm'>Edit</Link>,
-    <Link>Delete</Link>
-];
 
 const ITEM_HEIGHT = 48;
 
@@ -54,11 +50,16 @@ export default function ProductsCard(props) {
                             },
                         }}
                     >
-                        {options.map((option) => (
-                            <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                                {option}
-                            </MenuItem>
-                        ))}
+                         <MenuItem key={0} onClick={handleClose}>
+                            <Link to={{
+                                pathname:  `/categories/${props.categoryName}/${props.product.name}`,
+                                state: { product: props.product, categoryName: props.categoryName }
+                                // state: {product: props.product.name ,description: props.product.description}
+                            }}>Edit</Link>
+                        </MenuItem>
+                        <MenuItem key={1} onClick={handleClose}>
+                            <Link to={`/categories/${props.product.name}`}>Delete</Link>
+                        </MenuItem>
                     </Menu>
                 </div>
             </div>
