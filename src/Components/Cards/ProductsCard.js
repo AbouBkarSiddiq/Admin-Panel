@@ -8,7 +8,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
 const options = [
-    <Link to='/ProductsForm'>Edit</Link>,
+    <Link to='/ProductsEditForm'>Edit</Link>,
     <Link>Delete</Link>
 ];
 

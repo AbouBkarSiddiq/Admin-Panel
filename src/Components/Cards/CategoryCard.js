@@ -5,14 +5,10 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const options = [
-    <Link to="/catForm">Edit</Link>,
-    <Link>Delete</Link>
-];
-
 const ITEM_HEIGHT = 48;
 
 export default function CategoryCard({ name, image }) {
+    
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -52,11 +48,15 @@ export default function CategoryCard({ name, image }) {
                             },
                         }}
                     >
-                        {options.map((option) => (
-                            <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                                {option}
-                            </MenuItem>
-                        ))}
+                        <MenuItem key={0} onClick={handleClose}>
+                            <Link to={{
+                                pathname: `/category/${name}`,
+                                state: {product: {name, image}}
+                            }}>Edit</Link>
+                        </MenuItem>
+                        <MenuItem key={1} onClick={handleClose}>
+                            <Link to={`/category/${name}`}>Delete</Link>
+                        </MenuItem>
                     </Menu>
                 </div>
             </div>
