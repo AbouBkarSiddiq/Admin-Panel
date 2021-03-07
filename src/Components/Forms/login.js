@@ -25,7 +25,7 @@ export default function Login() {
                             <TextField className="mt-4 w-full border-gray-400" id="outlined-basic" label='Password' variant="outlined" />
                         </div>
                         <Link to="/category" className="focus:outline-none">
-                            <button className="mt-8 w-full bg-indigo-600 text-white p-3 rounded-md">Login</button>
+                            <button className="mt-8 w-full bg-blue-600 text-white p-3 rounded-md">Login</button>
                         </Link>
                     </form>
                 </div>
