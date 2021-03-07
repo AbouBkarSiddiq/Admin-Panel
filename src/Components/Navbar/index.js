@@ -13,7 +13,7 @@ function NavBar() {
                     </button>
                 </div>
                 <nav className="flex-col pb-4 text-center md:pb-0 md:flex md:justify-end md:flex-row sm:flex sm:justify-end sm:flex-row">
-                    <Link to="/" className="text-base px-4 py-1 mt-2 font-semibold bg-transparent  md:mt-0 sm:mt-4 md:ml-4  sm:ml-4  focus:outline-none text-white focus:shadow-outline">Products Portfolio</Link>
+                    <Link to="/category" className="text-base px-4 py-1 mt-2 font-semibold bg-transparent  md:mt-0 sm:mt-4 md:ml-4  sm:ml-4  focus:outline-none text-white focus:shadow-outline">Products Portfolio</Link>
 
                         <div className="dropdown inline-block relative">
                             <button className="focus:outline-none text-white font-semibold py-2 px-4 md:mt-0 sm:mt-4 rounded">

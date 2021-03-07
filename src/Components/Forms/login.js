@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -16,16 +17,16 @@ export default function Login() {
             <div className="relative py-3 sm:px-20 md:px-20 w-11/12 max-w-xl sm:mx-auto">
                 <div className="relative p-8 bg-white shadow-sm sm:rounded-xl">
                     <h1 className="text-center text-2xl text-blue-500">Login</h1>
-                    <form className="py-8 w-full">
-                        <div>
-                            <TextField className="mt-4 w-full border-gray-400" id="outlined-basic" label='User Name' variant="outlined" />
+                    <form className="w-full">
+                        <div className="mt-8">
+                            <TextField className=" w-full border-gray-400" id="outlined-basic" label='User Name' variant="outlined" />
                         </div>
-                        <div className="mt-4">
+                        <div className="mt-8">
                             <TextField className="mt-4 w-full border-gray-400" id="outlined-basic" label='Password' variant="outlined" />
                         </div>
-                        <div className="py-4 focus:outline-none">
-                            <button className="w-full bg-indigo-600 text-white p-3 rounded-md">Login</button>
-                        </div>
+                        <Link to="/category" className="focus:outline-none">
+                            <button className="mt-8 w-full bg-indigo-600 text-white p-3 rounded-md">Login</button>
+                        </Link>
                     </form>
                 </div>
             </div>

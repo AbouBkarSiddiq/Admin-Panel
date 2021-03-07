@@ -34,6 +34,7 @@ export default function ProductsCard(props) {
                         aria-controls="long-menu"
                         aria-haspopup="true"
                         onClick={handleClick}
+                        style={{ color: "white" }}
                     >
                         <MoreVertIcon />
                     </IconButton>
@@ -50,16 +51,19 @@ export default function ProductsCard(props) {
                             },
                         }}
                     >
-                         <MenuItem key={0} onClick={handleClose}>
-                            <Link to={{
-                                pathname:  `/categories/${props.categoryName}/${props.product.name}`,
-                                state: { product: props.product, categoryName: props.categoryName }
-                                // state: {product: props.product.name ,description: props.product.description}
-                            }}>Edit</Link>
+                        <Link className="text-black" to={{
+                            pathname: `/categories/${props.categoryName}/${props.product.name}`,
+                            state: { product: props.product, categoryName: props.categoryName }
+                        }}>
+                            <MenuItem key={0} onClick={handleClose}>
+                                Edit
                         </MenuItem>
-                        <MenuItem key={1} onClick={handleClose}>
-                            <Link to={`/categories/${props.product.name}`}>Delete</Link>
+                        </Link>
+                        <Link className="text-black">
+                            <MenuItem key={1} onClick={handleClose}>
+                                Delete
                         </MenuItem>
+                        </Link>
                     </Menu>
                 </div>
             </div>

@@ -7,8 +7,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const ITEM_HEIGHT = 48;
 
-export default function CategoryCard({ name ,image }) {
-    
+export default function CategoryCard({ name, image }) {
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -32,6 +32,7 @@ export default function CategoryCard({ name ,image }) {
                         aria-controls="long-menu"
                         aria-haspopup="true"
                         onClick={handleClick}
+                        style={{color: "white"}}
                     >
                         <MoreVertIcon />
                     </IconButton>
@@ -48,15 +49,19 @@ export default function CategoryCard({ name ,image }) {
                             },
                         }}
                     >
-                        <MenuItem key={0} onClick={handleClose}>
-                            <Link to={{
-                                pathname: `/category/${name}`,
-                                state: {product: {name, image}}
-                            }}>Edit</Link>
+                        <Link to={{
+                            pathname: `/category/${name}`,
+                            state: { product: { name, image } }
+                        }}>
+                            <MenuItem key={0} onClick={handleClose}>
+                                Edit
                         </MenuItem>
-                        <MenuItem key={1} onClick={handleClose}>
-                            <Link to={`/category/${name}`}>Delete</Link>
+                        </Link>
+                        <Link>
+                            <MenuItem key={1} onClick={handleClose}>
+                                Delete
                         </MenuItem>
+                        </Link>
                     </Menu>
                 </div>
             </div>

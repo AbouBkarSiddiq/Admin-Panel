@@ -24,8 +24,8 @@ export default function CategoryForm() {
                         <div className="floating-input mb-5 relative">
                             <TextField className="w-full border-gray-400" id="outlined-basic" label='Name' variant="outlined" />
                         </div>
-                        <div className="floating-input relative">
-                            <input type="file" id="img" name="img" accept="image/*" multiple className="w-full bg-indigo-600 text-white p-3 rounded-md" />
+                        <div className="relative">
+                            <input type="file" id="img" name="img" accept="image/*" multiple className="py-4 w-full bg-indigo-600 text-white p-3 rounded-md" />
                         </div>
                         <div className="py-4 flex justify-end">
                             <button className="px-8 bg-indigo-600 text-white p-3 rounded-md">Add</button>

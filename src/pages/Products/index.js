@@ -18,8 +18,8 @@ export default function Product(props) {
       {
         <div className="py-8">
           <h1
-            className="py-8 text-center text-2xl font-bold"
-            style={{ color: "#098E46", fontFamily: "Ubuntu" }}
+            className="text-blue-600 py-8 text-center text-2xl font-bold"
+            style={{ fontFamily: "Ubuntu" }}
           >
             {name}
           </h1>

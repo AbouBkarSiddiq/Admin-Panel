@@ -10,6 +10,7 @@ export default function CategoryEditForm(props) {
                 key={props.location.state.product.name}
                 name={props.location.state.product.name}
                 description={props.location.state.product.description}
+                categoryName={props.location.state.categoryName} 
             />
         </div>
     );
