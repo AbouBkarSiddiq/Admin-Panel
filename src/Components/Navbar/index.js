@@ -53,7 +53,7 @@ function NavBar() {
                                                                     : "text-black-600"
                                                                     } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
                                                             >
-                                                                Category
+                                                                Add Category
                                                             </Link>
                                                         )}
                                                     </Menu.Item>
@@ -69,7 +69,7 @@ function NavBar() {
                                                                     : "text-black-600"
                                                                     } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
                                                             >
-                                                                Products
+                                                                Add Products
                                                             </Link>
                                                         )}
                                                     </Menu.Item>

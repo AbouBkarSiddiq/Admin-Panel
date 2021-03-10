@@ -14,7 +14,7 @@ export default function Product(props) {
   }, []);
 
   return (
-    <div className="md:py-20 sm:py-20 py-20">
+    <div className="md:py-8 md:px-8 sm:px-8 sm:py-10 py-20">
       {
         <div className="py-8">
           <h1
@@ -23,7 +23,7 @@ export default function Product(props) {
           >
             {name}
           </h1>
-          <div className="md:px-8 flex justify-center md:justify-start sm:flex sm:justify-start  flex-wrap">
+          <div className="grid gap-4 xl:grid-cols-4 xl:px-14 xl:gap-8 lg:grid-cols-3 lg:px-12 md:grid-cols-2 md:px-8 sm:grid-cols-2 sm:px-8 px-6 sm:gap-2">
             {products.hasOwnProperty(`${name}`) &&
               products[name].map((product) => (
                 <ProductsCard product={product} categoryName={name} />

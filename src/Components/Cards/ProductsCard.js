@@ -6,10 +6,10 @@ import { Menu, Transition } from "@headlessui/react";
 export default function ProductsCard(props) {
 
     return (
-        <div className="bg-gray- space-x-2 space-y-2 flex flex-col shadow hover:shadow-2xl lg:w-1/3 xl:w-1/4 sm:w-1/2 md:w-1/2 p-4 w-full" style={{ border: "", fontFamily: "Ubuntu" }}>
+        <div className="" style={{ border: "", fontFamily: "Ubuntu" }}>
             <div className="bg-blue-600  items-center flex justify-between">
                 <div className=" py-2 px-2 text-white">
-                    <h3 className="p-2 shadow text-xl">{props.product.name}</h3>
+                    <h3 className="p-2 shadow text-lg">{props.product.name}</h3>
                 </div>
                 <div className="relative inline-block">
                     <Menu>
@@ -38,7 +38,6 @@ export default function ProductsCard(props) {
                                         static
                                         className="absolute -bottom-4 border right-0 w-32 bg-white rounded-md shadow-lg focus:outline-none"
                                     >
-
                                         <div className="shadow py-1 border focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (

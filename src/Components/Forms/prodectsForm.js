@@ -1,5 +1,5 @@
 import React from 'react';
-
+import categories from '../../data/categories'
 
 
 export default function ProductsForm() {
@@ -8,20 +8,17 @@ export default function ProductsForm() {
         <div className="bg-gray-200 sm:py-28 py-24 flex flex-col justify-center items-center">
             <div className="md:px-20 sm:px-20  relative py-3 md:w-11/12 md:max-w-xl sm:mx-auto">
                 <div className="relative p-8 bg-white shadow-sm sm:rounded-md">
-                    <h1 className="text-center text-2xl text-blue-600">Products</h1>
+                    <h1 className="text-center text-2xl text-blue-600">Add Product</h1>
                     <form className="py-8 w-full">
                         <label className="block mt-6">
-                            <div className="">Select Categories:</div>
+                            <div className="">Select Product:</div>
                             <select className="shadow border border-gray-400 focus:outline-none h-12 rounded-md mt-1 block w-full">
-                                <option>Crop Protection</option>
-                                <option>Harvesting</option>
-                                <option>Haulage</option>
-                                <option>Land Scaping</option>
-                                <option>Lift Operations</option>
-                                <option>Loader</option>
-                                <option>Postharvesting</option>
-                                <option>Seeding</option>
-                                <option>Tillage</option>
+                                {
+                                    categories.map((category) => (
+
+                                        <option>{category.name}</option>
+                                    ))
+                                }
                             </select>
                         </label>
                         <div className="mt-6 ">
@@ -32,7 +29,12 @@ export default function ProductsForm() {
                             />
                         </div>
                         <div className="rounded-md mt-6">
-                            <input type="file" id="img" name="img" accept="image/*" multiple className="py-4 w-full bg-blue-600 text-white p-3 rounded-md" />
+                            <label>Upload Product Image:</label>
+                            <input type="file" id="img" name="img" accept="image/*" multiple className="mt-2 w-full bg-blue-600 text-white p-3 rounded-md" />
+                        </div>
+                        <div className="rounded-md mt-6">
+                            <label>Upload Table Image:</label>
+                            <input type="file" id="img" name="img" accept="image/*" multiple className="mt-2 w-full bg-blue-600 text-white p-3 rounded-md"/>
                         </div>
                         <div className=" py-8 flex justify-end">
                             <button className="shadow px-8 bg-blue-600 text-white p-3 rounded-md">Add</button>

@@ -7,7 +7,7 @@ export default function CategoryForm() {
         <div className="py-24 sm:py-28 min-h-screen bg-gray-100 flex flex-col justify-center items-center">
             <div className="relative md:px-20 sm:px-20 py-3 w-11/12 max-w-xl sm:mx-auto">
                 <div className=" relative p-8 bg-white shadow-sm sm:rounded-md">
-                    <h1 className="text-center text-2xl text-indigo-600">Categories</h1>
+                    <h1 className="text-center text-2xl text-indigo-600">Add Category</h1>
                     <form className="w-full py-8">
                         <div className=" mb-5 ">
                             <input type="text" className="shadow mt-4 w-full h-12 border border-gray-200 p-3  rounded-lg focus:outline-none" placeholder="Name" />

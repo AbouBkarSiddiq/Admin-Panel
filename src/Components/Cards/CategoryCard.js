@@ -6,12 +6,12 @@ import { Menu, Transition } from "@headlessui/react";
 export default function CategoryCard({ name, image }) {
 
     return (
-        <div className="space-x-2  md:py-0 space-y-2 flex flex-col shadow hover:shadow-2xl lg:w-1/3 xl:w-1/4 sm:w-1/2 md:w-1/2 p-4 w-full" style={{ border: "", fontFamily: "Ubuntu" }}>
+        <div className="" style={{fontFamily: "Ubuntu" }}>
             <div className="bg-blue-600 items-center flex justify-between">
                 <div className="px-2 py-2 text-white">
                     <h3 className="p-2 shadow text-xl">{name}</h3>
                 </div>
-                <div className="relative inline-block">
+                <div className="inline-block">
                     <Menu>
                         {({ open }) => (
                             <div>
@@ -27,12 +27,6 @@ export default function CategoryCard({ name, image }) {
 
                                 <Transition
                                     show={open}
-                                    enter="transition ease-out duration-100"
-                                    enterFrom="transform opacity-0 scale-95"
-                                    enterTo="transform opacity-100 scale-100"
-                                    leave="transition ease-in duration-75"
-                                    leaveFrom="transform opacity-100 scale-100"
-                                    leaveTo="transform opacity-0 scale-95"
                                 >
                                     <Menu.Items
                                         static
