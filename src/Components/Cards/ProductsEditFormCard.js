@@ -1,26 +1,11 @@
 import React from 'react'
 import products from '../../data/products';
-import categories from '../../data/categories'
-
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import { TextareaAutosize } from '@material-ui/core';
-
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
-}));
+import categories from '../../data/categories';
 
 export default function ProductsEditFormCard(props) {
-    const classes = useStyles();
 
     return (
-        <div className="md:py-12 sm:py-12 py-24 md:bg-gray-100 sm:bg-gray-100 flex flex-col justify-center items-center">
+        <div className="py-24  sm:py-28 md:bg-gray-100 sm:bg-gray-100 flex flex-col justify-center items-center">
             <div className="md:px-12 sm:px-20  relative py-3 md:max-w-xl sm:mx-auto">
                 <div className="relative p-8 bg-white shadow-sm sm:rounded-xl">
                     <h1 className="text-center text-2xl text-blue-600">{props.name}</h1>
@@ -39,18 +24,18 @@ export default function ProductsEditFormCard(props) {
                             </select>
                         </label>
                         <div className="mt-10">
-                            <TextField className="py-6 w-full border-gray-400" id="outlined-basic" defaultValue={props.name} label='Product Name' variant="outlined" />
+                            <input className="shadow p-3 rounded-md w-full h-14 border focus:outline-none border-gray-200" defaultValue={props.name} />
                         </div>
                         <div className=" mt-8 relative">
-                            <TextField multiline rows={6} rowsMax={50} id="outlined-basic" defaultValue={props.description} label='Description' variant="outlined"
-                                className="py-6 w-full border-gray-400"
+                            <textarea rows={6} defaultValue={props.description}
+                                className="shadow p-3 rounded-md w-full h-72 border focus:outline-none border-gray-200"
                             />
                         </div>
                         <div className="mt-6 relative">
                             <input type="file" id="img" name="img" accept="image/*" multiple className="py-4 w-full bg-blue-600 text-white p-3 rounded-md" />
                         </div>
                         <div className="py-8 flex justify-end">
-                            <button className="px-8 bg-blue-600 text-white p-3 rounded-md">Update</button>
+                            <button className="shadow px-8 bg-blue-600 text-white p-3 rounded-md">Update</button>
                         </div>
                     </form>
                 </div>

@@ -14,7 +14,7 @@ export default function Product(props) {
   }, []);
 
   return (
-    <div className="">
+    <div className="md:py-20 sm:py-20 py-20">
       {
         <div className="py-8">
           <h1

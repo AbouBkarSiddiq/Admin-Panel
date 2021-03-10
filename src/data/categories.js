@@ -1,4 +1,4 @@
-  
+
 import BoomSprayer from '../assets/agroshalimar_assets/docs/crop protection/BoomSprayer.jpg';
 import Reaper from '../assets/agroshalimar_assets/docs/harvesting/TractorMounted.jpg';
 import trailer from '../assets/agroshalimar_assets/docs/haulage/trailer.jpg';

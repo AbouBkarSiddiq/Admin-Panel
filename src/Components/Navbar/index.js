@@ -1,35 +1,104 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FaPlusSquare } from "react-icons/fa";
-
+import { Menu, Transition } from "@headlessui/react";
 
 function NavBar() {
     return (
-        <div className="w-full bg-blue-600">
-            <div className="flex flex-col  max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row  sm:flex-row md:px-6 lg:px-8">
-                <div className="p-4 flex flex-col md:flex-row sm:flex-row items-center justify-between">
-                    <Link href="#" className="md:text-lg sm:text-lg text-sm font-semibold uppercase  text-white focus:outline-none focus:shadow-outline">Agro Shalimar Admin Panel</Link>
-                    <button className="md:hidden  focus:outline-none focus:shadow-outline" >
-                    </button>
-                </div>
-                <nav className="flex-col pb-4 text-center md:pb-0 md:flex md:justify-end md:flex-row sm:flex sm:justify-end sm:flex-row">
-                    <Link to="/category" className="text-base px-4 py-1 mt-2 font-semibold bg-transparent  md:mt-0 sm:mt-4 md:ml-4  sm:ml-4  focus:outline-none text-white focus:shadow-outline">Products Portfolio</Link>
-
-                        <div className="dropdown inline-block relative">
-                            <button className="focus:outline-none text-white font-semibold py-2 px-4 md:mt-0 sm:mt-4 rounded">
-                                <a className="text-lg">
-                                    <FaPlusSquare />
-                                </a>
-                            </button>
-                            <ul className="text-base dropdown-menu absolute hidden text-white bg-blue-500 pt-2">
-                                <Link to="/catForm" className=" border py-2 px-4 block " href="#">Categories</Link>
-                               <Link to="/ProductsForm" className=" border py-2 px-4 block " href="#">Products</Link>
-                               <Link className=" border py-2 px-4 block " href="#">Logout</Link>
-                            </ul>
-                        </div>
+        <header className="bg-blue-600 body-font">
+            <div className="container mx-auto flex flex-wrap sm:wrap p-5 flex-col sm:flex-row md:flex-row items-center">
+                <a className="text-white flex title-font font-medium items-center mb-4 sm:mb-0 md:mb-0">
+                    <span className="ml-3 text-xl">Agro Shalimar Admin Panel</span>
+                </a>
+                <nav className="text-white md:ml-auto sm:ml-auto flex flex-wrap sm:flex-wrap items-center text-base justify-center">
+                    <Link to="/category" className="mr-5 text-base">Product Portfolio</Link>
                 </nav>
+                <div className=" border-0 focus:outline-none rounded text-base mt-4 sm:mt-0 md:mt-0">
+                    <div className="flex h-12 items-center justify-center">
+                        <div className="relative inline-block text-left">
+                            <Menu>
+                                {({ open }) => (
+                                    <>
+                                        <span className="rounded-md shadow-sm">
+                                            <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 rounded-md focus:outline-none  ">
+                                                <button className="focus:outline-none text-white px-4 rounded">
+                                                    <a className="text-2xl">
+                                                        <FaPlusSquare />
+                                                    </a>
+                                                </button>
+                                            </Menu.Button>
+                                        </span>
+
+                                        <Transition
+                                            show={open}
+                                            enter="transition ease-out duration-100"
+                                            enterFrom="transform opacity-0 scale-95"
+                                            enterTo="transform opacity-100 scale-100"
+                                            leave="transition ease-in duration-75"
+                                            leaveFrom="transform opacity-100 scale-100"
+                                            leaveTo="transform opacity-0 scale-95"
+                                        >
+                                            <Menu.Items
+                                                static
+                                                className="text-center focus:outline-none absolute md:right-0 sm:right-0 w-32 origin-top-right bg-blue-600 text-white divide-y rounded-md shadow-lg outline-none"
+                                            >
+
+                                                <div className="shadow py-1 border">
+                                                    <Menu.Item>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                to="/catForm"
+                                                                className={`${active
+                                                                    ? " text-black-400"
+                                                                    : "text-black-600"
+                                                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
+                                                            >
+                                                                Category
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                </div>
+
+                                                <div className="shadow py-1 border ">
+                                                    <Menu.Item>
+                                                        {({ active }) => (
+                                                            <Link
+                                                                to="/ProductsForm"
+                                                                className={`${active
+                                                                    ? " text-black-400"
+                                                                    : "text-black-600"
+                                                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
+                                                            >
+                                                                Products
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                </div>
+
+                                                <div className="shadow py-1 border ">
+                                                    <Menu.Item>
+                                                        {({ active }) => (
+                                                            <Link to="/"
+                                                                className={`${active
+                                                                    ? " text-black-400"
+                                                                    : "text-black-600"
+                                                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
+                                                            >
+                                                                Logout
+                                                            </Link>
+                                                        )}
+                                                    </Menu.Item>
+                                                </div>
+                                            </Menu.Items>
+                                        </Transition>
+                                    </>
+                                )}
+                            </Menu>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
     )
 }
 
