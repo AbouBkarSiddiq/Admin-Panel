@@ -1,5 +1,4 @@
-  
-import React, { useEffect } from "react";
+import React from "react";
 import categories from "../../data/categories";
 import CategoryCard from "../../Components/Cards/CategoryCard";
 
