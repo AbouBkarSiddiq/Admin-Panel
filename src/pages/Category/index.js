@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import categories from "../../data/categories";
 import CategoryCard from "../../Components/Cards/CategoryCard";
 
-export default function Home() {
+export default function Category() {
   return (
     <div className="py-16">
       <h1

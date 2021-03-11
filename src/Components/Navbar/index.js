@@ -8,7 +8,7 @@ function NavBar() {
         <header className="bg-blue-600 body-font">
             <div className="container mx-auto flex flex-wrap sm:wrap p-5 flex-col sm:flex-row md:flex-row items-center">
                 <a className="text-white flex title-font font-medium items-center mb-4 sm:mb-0 md:mb-0">
-                    <span className="ml-3 text-xl">Agro Shalimar Admin Panel</span>
+                    <Link to="/category" className="ml-3 text-xl">Agro Shalimar Admin Panel</Link>
                 </a>
                 <nav className="text-white md:ml-auto sm:ml-auto flex flex-wrap sm:flex-wrap items-center text-base justify-center">
                     <Link to="/category" className="mr-5 text-base">Product Portfolio</Link>
@@ -69,7 +69,7 @@ function NavBar() {
                                                                     : "text-black-600"
                                                                     } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none`}
                                                             >
-                                                                Add Products
+                                                                Add Product
                                                             </Link>
                                                         )}
                                                     </Menu.Item>
