@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { FaEllipsisV } from "react-icons/fa";
+import { FaEdit, FaEllipsisV, FaTrash } from "react-icons/fa";
 import { Menu, Transition } from "@headlessui/react";
 
 export default function ProductsCard(props) {
@@ -36,7 +36,7 @@ export default function ProductsCard(props) {
                                 >
                                     <Menu.Items
                                         static
-                                        className="absolute -bottom-4 border right-0 w-32 bg-white rounded-md shadow-lg focus:outline-none"
+                                        className="shadow absolute z-10 md:right-0 top-0 origin-top-right sm:right-0 w-32 bg-white rounded-md focus:outline-none"
                                     >
                                         <div className="shadow py-1 border focus:outline-none">
                                             <Menu.Item>
@@ -50,6 +50,7 @@ export default function ProductsCard(props) {
                                                             : "text-black-600"
                                                             } text-base flex justify-between w-full px-4 py-2 leading-5 text-left focus:outline-none`}
                                                     >
+                                                    <i><FaEdit /></i>
                                                         Edit
                                                     </Link>
                                                 )}
@@ -65,6 +66,7 @@ export default function ProductsCard(props) {
                                                             : "text-black-600"
                                                             } flex justify-between w-full px-4 py-2 text-base leading-5 text-left focus:outline-none`}
                                                     >
+                                                    <i><FaTrash /></i>
                                                         Delete
                                                     </Link>
                                                 )}
