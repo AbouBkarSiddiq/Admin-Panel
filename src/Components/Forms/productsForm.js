@@ -1,8 +1,18 @@
-import React from 'react';
-import categories from '../../data/categories'
+import React, { useEffect } from 'react';
+// import categories from '../../data/categories'
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories } from '../../Redux/Actions/category';
+import {apiUrl} from '../../constants'
 
 
 export default function ProductsForm() {
+
+    const dispatch = useDispatch();
+    const categories = useSelector(state => state.category.categories);
+
+    useEffect(() => {
+        dispatch(getCategories())
+    }, [])
 
     return (
         <div className="bg-gray-200 sm:py-28 py-24 flex flex-col justify-center items-center">
@@ -11,11 +21,11 @@ export default function ProductsForm() {
                     <h1 className="text-center text-2xl text-blue-600">Add Product</h1>
                     <form className="py-8 w-full">
                         <label className="block mt-6">
-                            <div className="">Select Product:</div>
+                            <div className="">Select category:</div>
                             <select className="shadow border border-gray-400 focus:outline-none h-12 rounded-md mt-1 block w-full">
                                 {
                                     categories.map((category) => (
-
+                                        // <option></option>
                                         <option>{category.name}</option>
                                     ))
                                 }

@@ -36,8 +36,8 @@ export const addProduct = (data) => async dispatch => {
         type: ADD_PRODUCT,
         payload: {
           id: res.data.id,
-          name: data.name,
-          description: data.description,
+          name: data.get('name'),
+          description: data.get('description'),
           categoryId: res.data.categoryId,
           image: res.data.image
         }
@@ -62,10 +62,10 @@ export const editProduct = (data) => async dispatch => {
       dispatch({
         type: EDIT_PRODUCT,
         payload: {
-          id: data.id,
-          name: data.name,
-          description: data.description,
-          categoryId: data.categoryId,
+          id: data.get('id'),
+          name: data.get('name'),
+          description: data.get('description'),
+          categoryId: data.get('categoryId'),
           image: res.data?.image
         }
       });
@@ -107,7 +107,7 @@ export const deleteProduct = (data) => async dispatch => {
       dispatch({
         type: DELETE_PRODUCT,
         payload: {
-          id: data.id
+          id: data.get('id')
         }
       });
     } else {

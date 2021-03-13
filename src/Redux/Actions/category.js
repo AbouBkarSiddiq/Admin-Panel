@@ -55,8 +55,8 @@ export const editCategory = (data) => async dispatch => {
       dispatch({
         type: EDIT_CATEGORY,
         payload: {
-          id: data.id,
-          name: data.name,
+          id: data.get('id'),
+          name: data.get('name'),
           image: res.data?.image
         }
       });
@@ -79,7 +79,7 @@ export const deleteCategory = (data) => async dispatch => {
       dispatch({
         type: DELETE_CATEGORY,
         payload: {
-          id: data.id
+          id: data.get('id')
         }
       });
     } else {

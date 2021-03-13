@@ -5,7 +5,7 @@ import Navbar from '../Components/Navbar/index';
 import CategoryForm from "../Components/Forms/CategoryForm";
 import Products from '../pages/Products/index';
 import Category from '../pages/Category/index';
-import ProdectsForm from "../Components/Forms/prodectsForm";
+import ProductsForm from "../Components/Forms/productsForm";
 import CategoryEditForm from "../pages/CategoryEditForm";
 import ProductsEditForm from "../pages/ProductsEditForm";
 import Login from "../Components/Forms/login";
@@ -20,7 +20,7 @@ export default function App() {
         <Route path={"/category"} exact component={Category} />
         <Route path={"/categories/:name"} exact component={Products} />
         <Route path="/catForm" component={CategoryForm} />
-        <Route path="/ProductsForm" component={ProdectsForm} />
+        <Route path="/ProductsForm" component={ProductsForm} />
         <Route path="/category/:name" component={CategoryEditForm} />
         <Route path="/categories/:catName/:name" component={ProductsEditForm} />
       </Switch>
