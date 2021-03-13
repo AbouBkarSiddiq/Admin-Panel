@@ -1,8 +1,18 @@
-import React from "react";
-import categories from "../../data/categories";
+import React, { useEffect } from "react";
+// import categories from "../../data/categories";
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories } from '../../Redux/Actions/category'
 import CategoryCard from "../../Components/Cards/CategoryCard";
+import {apiUrl} from '../../constants'
 
 export default function Category() {
+  const dispatch = useDispatch();
+  const categories = useSelector(state => state.category.categories);
+
+  useEffect(() => {
+    dispatch(getCategories())
+  }, [])
+
   return (
     <div className="py-16">
       <h1
@@ -15,7 +25,7 @@ export default function Category() {
           <CategoryCard
             key={category.name}
             name={category.name}
-            image={category.image}
+            image={`${apiUrl}/${category.image}`}
           />
         ))}
       </div>

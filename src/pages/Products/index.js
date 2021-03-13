@@ -1,12 +1,17 @@
-  
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import products from "../../data/products";
+import { useDispatch, useSelector } from 'react-redux';
+import { apiUrl } from '../../constants';
+import { getProductsByCategory } from '../../Redux/Actions/product'
+// import products from "../../data/products";
 import ProductsCard from "../../Components/Cards/ProductsCard";
 
 export default function Product(props) {
   const { name } = useParams();
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.product.products);
   useEffect(() => {
+    dispatch(getProductsByCategory())
     window.scrollTo(0, 0);
     if (!products.hasOwnProperty(`${name}`)) {
       props.history.goBack();
@@ -26,7 +31,7 @@ export default function Product(props) {
           <div className="grid gap-4 xl:grid-cols-4 xl:px-14 xl:gap-8 lg:grid-cols-3 lg:px-12 md:grid-cols-2 md:px-8 sm:grid-cols-2 sm:px-8 px-6 sm:gap-2">
             {products.hasOwnProperty(`${name}`) &&
               products[name].map((product) => (
-                <ProductsCard product={product} categoryName={name} />
+                <ProductsCard product={`${apiUrl}/${product}`} categoryName={name}/>
               ))}
           </div>
         </div>
